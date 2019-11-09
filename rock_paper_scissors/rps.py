@@ -3,22 +3,21 @@
 //Write a factorial that generates moves of n
 """
 all_plays = [['rock'], ['paper'], ['scissors']]
-last_game = []
-new_ar = []
-def recursion(ar,num):
-  if num == 0:
-    last_game.append(ar)
-    return
-  for i in all_plays:
-    recursion(ar+[i],num-1)
+
   
   
 
 def rock_paper_scissors(n):
-  if n <= 0:
-    return [[]]
-  recursion(new_ar,n)
-  return last_game
+  last_game = []
+  new_ar = []
+  def recursion(ar,num):
+    if num == 0:
+      last_game.append(ar)
+      return
+    for i in all_plays:
+      recursion(ar+[i],num-1)
+    recursion(new_ar,n)
+    return last_game
   
 
     
